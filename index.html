@@ -6,26 +6,54 @@
     <title>Alex Tenorio</title>
     <link rel="stylesheet" href="portfolio.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="icon" type="image/png" href="img/AxoTenorio.jpg">
+
+
 </head>
 <body>
 
+    <div class="animated-background">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
 
 
-    <!-- Dynamic Island Navigation -->
+    <div class="content"> 
+        <!-- Dynamic Island Navigation -->
     <nav class="dynamic-nav">
         <div class="nav-island">
             <div class="nav-profile">
-                <img src="https://i.ibb.co/wJHWrY9/124657414.jpg"  class="nav-profile-img">
+                <img src="img/AxoTenorio.jpg"  class="nav-profile-img">
             </div>
            
+            <div class="nav-links">
+                <a id="nav-main" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                   
+                </a>
+               
+                <a  class="nav-link" id="nav-project">
+                    <i class="fas fa-code"></i>
+                    
+                </a>
+
+                <a id="nav-certificate" class="nav-link">
+                   <i class="fa-solid fa-brain"></i>
+                </a>
+            </div>
+
             <div class="nav-social">
                 <a href="https://github.com/JoseAlejandroTenorioChavez" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/josealejandrotenoriochavez" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/qr/LEA4Y6WNI3TXH1" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </nav>
 
-    <!-- Contenido principal -->
+    <section id="main">
+        <!-- Contenido principal -->
     <main class="main-content">
         <div class="bento-grid">
             <!-- Sección de Bienvenida -->
@@ -38,10 +66,7 @@
             <!-- Foto Personal -->
             <div class="bento-item personal-photo">
                 <div class="photo-container">
-                    <img src="https://i.ibb.co/fHNwKNR/Hi-its-me.png" alt="Foto personal">
-                    <div class="photo-overlay">
-                        <p>¡Hola Mundo!👋</p>
-                    </div>
+                    <img src="img/Hi its me.png" alt="Foto personal">
                 </div>
             </div>
 
@@ -56,10 +81,40 @@
 
             
              <!-- Sección Sobre Mí -->
-            <div class="bento-item languages">
+            <!-- <div class="bento-item languages">
                 <h2><i class="fa-solid fa-language"></i>Idiomas</h2>
                 <span class="language">Español nativo</span>
                 <span class="language">Inglés B1</span>
+            </div> -->
+
+
+            <div class="bento-item languages language-card">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-language"></i>Idiomas</h2>
+                </div>
+        
+                <div class="language-list">
+                    <div class="language-item">
+                        <div class="language-info">
+                            <span class="language-name">Español</span>
+                            <span class="language-level">Nativo</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-native"></div>
+                        </div>
+                    </div>
+        
+                    <div class="language-item">
+                        <div class="language-info">
+                            <span class="language-name">Inglés</span>
+                            <span class="language-level">Nivel B1</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-advanced"></div>
+                        </div>
+                    </div>
+    
+                </div>
             </div>
   
 
@@ -97,7 +152,10 @@
                     <div class="year">2017- 2020</div>
                     <h3>Bachillerato Fisico-Matematico</h3>
                     <p>Nova Spania</p>
-            </div>
+                </div>
+                <div class="see-more" id="see-more-education">
+                    Ver mis certificados...
+                </div>
             </div>
 
             <!-- Habilidades -->
@@ -201,18 +259,259 @@
                    
                     </div>
                 </div>
+                <div class="see-more" id="see-more-project">
+                    Ver mas proyectos
+                </div>
             </div>
 
             <!-- Contacto -->
             <div class="bento-item contact">
-                <h2><i class="fas fa-envelope"></i> Contacto</h2>
-                <div class="contact-links">
+
+                <div class="wrapper">
+                
+                    <a href="https://github.com/JoseAlejandroTenorioChavez" class="button">
+                       <div class="icon">
+                          <i class="fab fa-github"></i>
+                       </div>
+                       <span>Github</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/josealejandrotenoriochavez" class="button">
+                        <div class="icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <span>Linkedin</span>
+                     </a>
+
+                     <a href="https://www.linkedin.com/in/josealejandrotenoriochavez" class="button">
+                        <div class="icon">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <span>CV</span>
+                     </a>
+
+                     <a href="#" class="button"  onclick="copyToClipboard('AlejandroTenorioChavez@outlook.com')">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <span>Correo</span>
+                     </a>
+
+                     <a href="https://wa.me/qr/LEA4Y6WNI3TXH1" class="button">
+                        <div class="icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <span>Whatsapp</span>
+                     </a>
+                    
+                 </div>
+
+                <!-- <div class="contact-links">
                     <a href="https://github.com/JoseAlejandroTenorioChavez" class="contact-link">GitHub</a>
                     <a href="https://www.linkedin.com/in/josealejandrotenoriochavez" class="contact-link">LinkedIn</a>
                     <a href="#" class="contact-link" onclick="copyToClipboard('AlejandroTenorioChavez@outlook.com')">Email</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <section id="project-section">
+        <div class="section-projects-container">
+            <div class="section-projects-grid">
+                <!-- Proyecto 1 -->
+                <article class="section-projects-card">
+                    <div class="section-projects-image">
+                        <img src="/img/proyectos/SIM.png" alt="Proyecto 1">
+                    </div>
+                    <div class="section-projects-content">
+                        <div class="section-projects-tags">
+                            <span class="section-projects-tag">PHP</span>
+                            <span class="section-projects-tag">Laravel</span>
+                            <span class="section-projects-tag">Tailwind CSS</span>
+                            <span class="section-projects-tag">MariaDB</span>
+                        </div>
+                        <h3 class="section-projects-title">Módulo SIM de Eventos y Diplomas</h3>
+                        <p class="section-projects-description">
+                            Módulo para la plataforma SIM del Tecnológico de Morelia, diseñado para crear y gestionar todo el proceso relacionado 
+                            con los cursos y diplomados impartidos por el Instituto Tecnológico de Morelia, incluyendo la generación e impresión de 
+                            los diplomas correspondientes.
+                        </p>
+                        <div class="section-projects-links">
+                            <a href="https://sim.morelia.tecnm.mx/login" class="section-projects-link">Producción →</a>
+                        </div>
+                    </div>
+                </article>
+    
+                <!-- Proyecto 2 -->
+                <article class="section-projects-card">
+                    <div class="section-projects-image">
+                        <img src="/img/proyectos/data science.png" alt="Proyecto 2">
+                    </div>
+                    <div class="section-projects-content">
+                        <div class="section-projects-tags">
+                            <span class="section-projects-tag">Python</span>
+                        </div>
+                        <h3 class="section-projects-title">HousePricingEDA</h3>
+                        <p class="section-projects-description">
+                            Este proyecto de análisis de datos de casas emplea un enfoque estructurado para procesar y preparar datos para aprendizaje automático. Comienza con un análisis exploratorio (EDA) para identificar patrones y anomalías, seguido de limpieza de datos para manejar valores nulos y atípicos. Convierte variables categóricas en numéricas mediante técnicas como codificación one-hot y MultiColumnLabelEncoder. Finalmente, analiza las correlaciones entre características para seleccionar las más relevantes, optimizando la precisión de las predicciones.
+                        </p>
+                        <div class="section-projects-links">
+                            <a href="https://github.com/JoseAlejandroTenorioChavez/HousePricingEDA-AlejandroTenorio/tree/main" class="section-projects-link">Codigo →</a>
+                        </div>
+                    </div>
+                </article>
+    
+                <!-- Proyecto 3 -->
+                <article class="section-projects-card">
+                    <div class="section-projects-image">
+                        <img src="/img/proyectos/Axogame.png" alt="Proyecto 3">
+                    </div>
+                    <div class="section-projects-content">
+                        <div class="section-projects-tags">
+                            <span class="section-projects-tag">JavaScript</span>
+                            <span class="section-projects-tag">HTML</span>
+                            <span class="section-projects-tag">CSS</span>
+                            <span class="section-projects-tag">Phaser</span>
+                            <span class="section-projects-tag">Synaptic</span>
+                        </div>
+                        <h3 class="section-projects-title">Axo Game</h3>
+                        <p class="section-projects-description">
+                            AxoGame es un innovador juego web que utiliza redes neuronales para entrenar una IA que aprende a 
+                            evitar obstáculos en tiempo real. Desarrollado con Phaser y Synaptic, ofrece una experiencia 
+                            interactiva y educativa sobre el aprendizaje automático.
+                        </p>
+                        <div class="section-projects-links">
+                            <a href="https://josealejandrotenoriochavez.github.io/IA---AxoGame/" class="section-projects-link">Demo →</a>
+                            <a href="https://github.com/JoseAlejandroTenorioChavez/IA---AxoGame" class="section-projects-link">GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Proyecto 4 -->
+                <article class="section-projects-card">
+                    <div class="section-projects-image">
+                        <img src="/img/proyectos/finance-tracker-js.png" alt="Proyecto 4">
+                    </div>
+                    <div class="section-projects-content">
+                        <div class="section-projects-tags">
+                            <span class="section-projects-tag">JavaScript</span>
+                            <span class="section-projects-tag">HTML</span>
+                            <span class="section-projects-tag">CSS</span>
+                        </div>
+                        <h3 class="section-projects-title">Finance Tracker JS</h3>
+                        <p class="section-projects-description">
+                            Un aplicación web minimalista y responsiva para seguimiento financiero personal, 
+                            construida con HTML, CSS y JavaScript vanilla.
+                        </p>
+                        <div class="section-projects-links">
+                            <a href="https://finance-trackerjs.netlify.app/" class="section-projects-link">Demo →</a>
+                            <a href="https://github.com/JoseAlejandroTenorioChavez/SeguimientoFinanciero" class="section-projects-link">GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="section-certificate">
+        <div class="certificate-section-certificates-container">
+            <div class="certificate-section-certificates-grid">
+                <!-- Certificado 1 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert1">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/AI Essencials.png" alt="Certificado 1">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">AI Essencials</h3>
+                        <p class="certificate-section-certificate-issuer">Coursera</p>
+                        <p class="certificate-section-certificate-date">2024</p>
+                    </div>
+                </div>
+    
+                <!-- Certificado 2 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert2">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/Data Data Everywhere.png" alt="Certificado 2">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">Data Data Everywhere</h3>
+                        <p class="certificate-section-certificate-issuer">Coursera</p>
+                        <p class="certificate-section-certificate-date">2024</p>
+                    </div>
+                </div>
+    
+                <!-- Certificado 3 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert3">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/Ask Questions.png" alt="Certificado 3">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">Ask Questions to Make Data-Driven Decisions</h3>
+                        <p class="certificate-section-certificate-issuer">Coursera</p>
+                        <p class="certificate-section-certificate-date">2024</p>
+                    </div>
+                </div>
+
+
+                <!-- Certificado 4 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert4">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/Transformacion digital.png" alt="Certificado 4">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">Transformación digital</h3>
+                        <p class="certificate-section-certificate-issuer">Satander Open Academy</p>
+                        <p class="certificate-section-certificate-date">2024</p>
+                    </div>
+                </div>
+
+
+                <!-- Certificado 5 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert5">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/INTRODUCCION A LA CIENCIA DE DATOS-1.png" alt="Certificado 5">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">Introducción a la ciencia de datos</h3>
+                        <p class="certificate-section-certificate-issuer">Satander Open Academy</p>
+                        <p class="certificate-section-certificate-date">2025</p>
+                    </div>
+                </div>
+
+                <!-- Certificado 5 -->
+                <div class="certificate-section-certificate-card" data-certificate="cert6">
+                    <div class="certificate-section-certificate-image">
+                        <img src="/img/certificates/PREPARE DATA FOR EXPLORATION-1.png" alt="Certificado 6">
+                    </div>
+                    <div class="certificate-section-certificate-content">
+                        <h3 class="certificate-section-certificate-title">Prepare data for exploration</h3>
+                        <p class="certificate-section-certificate-issuer">Coursera</p>
+                        <p class="certificate-section-certificate-date">2025</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <!-- Modal -->
+        <div class="certificate-section-modal">
+            <div class="certificate-section-modal-content">
+                <button class="certificate-section-modal-close">&times;</button>
+                <img class="certificate-section-modal-image" src="" alt="Certificado">
+                <div class="certificate-section-modal-details">
+                    <h3 class="certificate-section-certificate-title"></h3>
+                    <p class="certificate-section-certificate-issuer"></p>
+                    <p class="certificate-section-certificate-date"></p>
                 </div>
             </div>
         </div>
+
+    </section>
+    </div>
+    
     </main>
 
     <script src="portfolio.js"></script>
