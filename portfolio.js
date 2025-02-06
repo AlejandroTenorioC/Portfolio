@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+
   const modal = document.querySelector(".certificate-section-modal");
   const modalImage = document.querySelector(".certificate-section-modal-image");
   const modalTitle = document.querySelector(
@@ -100,3 +102,11 @@ $(document).ready(function () {
     $("#section-certificate").fadeIn(1000);
   });
 });
+
+
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text)
+      .then(() => alert('Correo copiado al portapapeles: ' + text))
+      .catch(err => console.error('Error al copiar:', err));
+}
