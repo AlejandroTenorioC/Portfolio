@@ -1,22 +1,205 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 :root {
-    --primary-color: #0fa6d9;
+    --primary-color: #0f9e99;
+    --primary-color-bold: #0D827E;
     --secondary-color: #14181f;
     --dark-color: #1a1a1a;
     --light-color: #f5f5f5;
-    --text-color: #333;
+    --text-color: #333333;
     --text-light: #666;
-    --island-bg: rgba(22, 22, 23, 0.95);
+    --island-bg: rgba(0, 0, 0, 0.507);
     --island-border: rgba(255, 255, 255, 0.1);
     --transition: all 0.3s ease;
+    --card-color: #efe9e0;
+    --welcome-color:linear-gradient(135deg, #0F9E99 0%, #5EB5B5 100%);    ;
+    --background: #E5F2F1;
+    --circle:  #74C2C3 ;
 }
+
+.dark-mode {
+    --primary-color: #20DFDA; /* Un poco más vibrante para destacar en fondo oscuro */
+    --primary-color-bold: #1BB1AD; /* Ajuste para mantener buen contraste */
+    --secondary-color: #0D1B1E; /* Azul petróleo oscuro para fondo general */
+    --dark-color: #121212; /* Fondo aún más oscuro para secciones clave */
+    --light-color: #E3E6E6; /* Gris claro para detalles y mejor lectura */
+    --text-color: #E3E6E6; /* Texto principal en gris claro */
+    --text-light: #A0A4A8; /* Texto secundario en gris suave */
+    --island-bg: rgba(255, 255, 255, 0.05); /* Fondo de secciones sutil */
+    --island-border: rgba(255, 255, 255, 0.2); /* Bordes ligeramente visibles */
+    --transition: all 0.3s ease;
+    --card-color: #162627; /* Fondo de tarjetas más oscuro */
+    --welcome-color: linear-gradient(135deg, #1BB1AD 0%, #3D8281 100%); /* Degradado más oscuro */
+    --background: #0D1B1E; /* Fondo general */
+    --circle: #1BB1AD; /* Color de los círculos de fondo */
+}
+
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* modo oscuro y modo claro */
+
+/* Contenedor Bento */
+.bento-item.change-color {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    grid-column: span 2;
+  }
+  
+  /* Prefijamos todas las clases con .change-color para aislarlas */
+  .change-color .app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .change-color .body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .change-color .phone {
+    width: 100%;
+    max-width: 15rem;
+    height: 85%;
+    min-height: 250px;
+    border-radius: 25px;
+    padding: 1.5rem;
+    transition: background-color 0.6s;
+    /* box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Contenido central */
+  .change-color .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+  /* Círculo y animaciones */
+  .change-color .circle {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: linear-gradient(40deg, #ff0080, #ff8c00, #e8e8e8, #8983f7, #a3dafb 80%);
+    background-size: 400%;
+    transition: background-position 0.6s;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .change-color .crescent {
+    position: absolute;
+    right: 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: #e8e8e8;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.6s;
+  }
+  
+  /* Switch */
+  .change-color label {
+    width: 100%;
+    max-width: 160px;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    margin-top: auto;
+  }
+  
+  .change-color .toggle {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .change-color .names {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 500;
+    user-select: none;
+  }
+  
+  .change-color .light,
+  .change-color .dark {
+    margin: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .change-color .dark {
+    opacity: 0.5;
+  }
+  
+  /* Estados del switch */
+  .change-color [type="checkbox"] {
+    display: none;
+  }
+  
+  /* Animaciones del modo oscuro */
+  .change-color [type="checkbox"]:checked + .app .toggle {
+    transform: translateX(100%);
+    background-color: #34323d;
+  }
+  
+  .change-color [type="checkbox"]:checked + .app .phone {
+    /* background-color: #26242e; */
+    color: white;
+  }
+  
+  .change-color [type="checkbox"]:checked + .app .crescent {
+    transform: scale(1);
+    background: var(--card-color);
+  }
+  
+  .change-color [type="checkbox"]:checked + .app .circle {
+    background-position: 100% 100%;
+  }
+  
+  .change-color [type="checkbox"]:checked + .app .dark {
+    opacity: 1;
+  }
+  
+  .change-color [type="checkbox"]:checked + .app .light {
+    opacity: 0.5;
+  }
+
+
 
 /* fondo animado */
 
@@ -34,14 +217,14 @@
     position: absolute;
     border-radius: 50%;
     opacity: 0.6;
-    left: -150px; /* Posicionado a la izquierda */
+    /* left: 0px; */ /* Posicionado a la izquierda */
     transform-origin: center;
 }
 
 .circle-1 {
     width: 500px;
     height: 500px;
-    background: #005bf7; /* Naranja más fuerte */
+    background: var(--circle);
     top: 20%;
     animation: breathe 8s ease-in-out infinite;
 }
@@ -49,7 +232,7 @@
 .circle-2 {
     width: 600px;
     height: 600px;
-    background: #00f2ff; /* Naranja más suave */
+    background: var(--circle); 
     top: 40%;
     animation: breathe 8s ease-in-out infinite;
     animation-delay: -4s; /* Desfase para que no respiren al mismo tiempo */
@@ -58,9 +241,7 @@
 .circle-3 {
     width: 600px;
     height: 600px;
-    background: #00f2ff /* Naranja más suave */
-    ; /* Naranja más suave */
-    
+    background: var(--circle);
     left: 80%;
     animation: breathe 8s ease-in-out infinite;
     animation-delay: -4s; /* Desfase para que no respiren al mismo tiempo */
@@ -80,12 +261,12 @@ body {
     position: relative;
     min-height: 100vh;
     margin: 0;
-    background: #fff9f5;
+    background: var(--background);
     font-family: 'Inter', sans-serif;
-    background-color: var(--light-color);
+    /* background-color: var(--light-color); */
     color: var(--text-color);
     line-height: 1.6;
-    padding-top: 100px; 
+    padding-top: 100px;
 }
 
 .content {
@@ -103,6 +284,8 @@ body {
     z-index: 1000;
     width: 90%;
     max-width: 700px;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
 }
 
 .nav-island {
@@ -219,7 +402,7 @@ align-items: center;
     width: max-content;
     display: flex;
     align-items: center;
-    /* margin: 10px; */
+    margin: 10px;
     border: 1px solid var(--primary-color);
     background: var(--primary-color);
     color: white;
@@ -263,8 +446,7 @@ align-items: center;
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--light-color);
-    color: #000000;
+    /* background-color: var(--light-color); */
     line-height: 1.6;
 }
 
@@ -378,7 +560,7 @@ body {
 }
 
 .bento-item {
-    background: white;
+    background: var(--card-color);
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -408,7 +590,7 @@ body {
 /* Welcome Section */
 .welcome {
     grid-column: span 6;
-    background: #225df987;
+    background: var(--welcome-color);
     /* background: linear-gradient(135deg, var(--primary-color), #ebebeb); */
     color: white;
     vector-effect: non-scaling-stroke;
@@ -449,7 +631,7 @@ body {
 }
 
 .languages{
-    grid-column: span 2;
+    grid-column: span 6;
     /* text-align: center; */
     display: flex;
     flex-direction: column;
@@ -462,7 +644,6 @@ body {
 }
 
 .language-card {
-    background-color: white;
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -657,16 +838,9 @@ border-radius: 50%;
 background: var(--primary-color);
 }
 
-.year {
-font-weight: bold;
-color: var(--primary-color);
-margin-bottom: 5px;
-}
+.year {font-weight: bold;color: var(--primary-color-bold);margin-bottom: 5px;padding: 5px 10px;border-radius: 8px;}
 
-.timeline-item h3 {
-margin: 5px 0;
-color: var(--text-color);
-}
+.timeline-item h3 {margin: 5px 0;color: var(--primary-color);}
 
 .timeline-item p {
 color: var(--text-light);
@@ -807,7 +981,7 @@ transform: translateX(5px);
     text-decoration: none;
     margin: 0 5px;
     overflow: hidden;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
@@ -815,18 +989,19 @@ transform: translateX(5px);
   }
   .wrapper .button:hover {
     width: 200px;
-    background: var(--primary-color);
+    background: var(--circle);
   }
   .wrapper .button .icon {
     display: inline-block;
     height: 60px;
     width: 60px;
-    color: #000;
+    color: #ffffff;
     text-align: center;
     border-radius: 50px;
     box-sizing: border-box;
     line-height: 60px;
     transition: all 0.5s ease-out;
+    background-color: var(--circle);
   }
 
   .wrapper .button .icon i {
@@ -903,7 +1078,7 @@ from, to { border-color: transparent }
 }
 
 .section-projects-card {
-    background: white;
+    background: var(--card-color);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -957,12 +1132,12 @@ from, to { border-color: transparent }
 .section-projects-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--circle);
     margin-bottom: 0.75rem;
 }
 
 .section-projects-description {
-    color: #6b7280;
+    color: var(--text-color);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1.5rem;
@@ -1012,7 +1187,7 @@ from, to { border-color: transparent }
 }
 
 .certificate-section-certificate-card {
-    background: white;
+    background: var(--card-color);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1046,12 +1221,12 @@ from, to { border-color: transparent }
 .certificate-section-certificate-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .certificate-section-certificate-issuer {
-    color: #6b7280;
+    color: var(--primary-color-bold);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }

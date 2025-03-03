@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
   const modal = document.querySelector(".certificate-section-modal");
   const modalImage = document.querySelector(".certificate-section-modal-image");
   const modalTitle = document.querySelector(
@@ -110,3 +108,26 @@ function copyToClipboard(text) {
       .then(() => alert('Correo copiado al portapapeles: ' + text))
       .catch(err => console.error('Error al copiar:', err));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const switchToggle = document.getElementById("switch");
+  const body = document.body;
+
+  // Verificar si hay un tema guardado en localStorage
+  if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      switchToggle.checked = true;
+  }
+
+  // Cambiar solo el card-color
+  switchToggle.addEventListener("change", () => {
+      if (switchToggle.checked) {
+          body.classList.add("dark-mode");
+          localStorage.setItem("theme", "dark");
+      } else {
+          body.classList.remove("dark-mode");
+          localStorage.setItem("theme", "light");
+      }
+  });
+});
+
